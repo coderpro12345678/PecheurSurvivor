@@ -130,7 +130,9 @@ public abstract class Zone {
 	        return "Aucun objet à ramasser ici.";
 	    }
 	}
-
+    public List<Objet> getObjets(){
+       return this.objets;
+    }
    
 
 }

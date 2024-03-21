@@ -8,6 +8,7 @@ public class Plage extends Zone {
     public Plage(String description) {
         super(description);
         this.couteau = new Objet("Couteau");
+        super.getObjets().add(couteau);
         
         commandes = new ArrayList<String>();
         
