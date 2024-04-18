@@ -1,16 +1,18 @@
 package jeu;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class Village extends Zone {
-
+	private boolean dragontuée = false;
     public Village(String description) {
         super(description);
         commandes = new ArrayList<String>();
-        
+
        
     }
 
@@ -32,8 +34,10 @@ public class Village extends Zone {
 	@Override
 	public List<String> getCommandesSpecifiques() {
 		commandes.add("PARLER AU VILLAGEOIS");
-		commandes.add("BOIRE AU PUIT");
 		commandes.add("PARLER AU CHEF DU VILLAGE");
+		sorties.add("NORD-N");
+		sorties.add("OUEST-O");
+		sorties.add("EST-E");
 		return commandes;
 	}
 
@@ -43,6 +47,7 @@ public class Village extends Zone {
 		
 		 switch (commande) {
          case "PARLER AU CHEF DU VILLAGE":
+			if (!dragontuée){
              // Afficher l'image et le message à la console
         	 if(commandes.contains("PARLER AU VILLAGEOIS")) {
         		 Main.jeu.afficher("Vous devez d'abord parler au villageois");
@@ -55,10 +60,17 @@ public class Village extends Zone {
         		 		+ "Je te donne pour cela un arc et 1 flèche très puissante qui viendront à bout du dragon mais attention tu n'auras pas le droit de le rater.\n"
         		 		+ "Maintenant va et puisse la chance etre avec toi.");
         		 commandes.add("TUER LE DRAGON");
-        	 }
-             
+				 commandes.remove("PARLER AU CHEF DU VILLAGE");
+        	 }}
+			else{
+				Main.jeu.getGUI().afficheImage("village2.png");
+				Main.jeu.afficher("Merci pêcheur!");
+				commandes.remove("PARLER AU CHEF DU VILLAGE");
+			}
+
              break;
          case "PARLER AU VILLAGEOIS":
+
         	    Main.jeu.getGUI().afficheImage("village3.png");
         	    Main.jeu.afficher("Bonjour pêcheur, que nous vaut ta visite dans notre village \n "
         	                      + "Tu t'es échoué dans notre île avec ton âne et tu voudrais parler à notre chef? \n"
@@ -71,23 +83,60 @@ public class Village extends Zone {
         	        Main.jeu.afficher("Mauvaise réponse");
         	    }
         	    break;
-         /*case "VERS LA FORET":
-         	Main.jeu.getGUI().afficheImage("foret.png");
-         	
-         	sorties.remove("VERS LA FORET");
-         	
-         	break;*/
-         default:
+			 case "TUER LE DRAGON":
+				 lancerMiniJeuPourTuerLeDragon();
+				 commandes.remove("TUER LE DRAGON");
+				 commandes.add("PARLER AU CHEF DU VILLAGE");
+				 break;
+
+			 default:
          	 Main.jeu.afficher("Commande inconnue");
              break;
-         
+
      }
-		 
-		
+
+
 	}
-	
+
 	private String lireReponseGUI() {
 	    return JOptionPane.showInputDialog("Quelle est la capitale de Djibouti?");
 	}
+	private String lireReponseGUI1(){
+		return JOptionPane.showInputDialog("Quel chiffre se cachait dans la zone?");
+	}
+	private void lancerMiniJeuPourTuerLeDragon() {
+		// Afficher l'image du dragon
+		Main.jeu.getGUI().afficheImage("monstre.png");
+		Main.jeu.getGUI().stopperSaisieUtilisateur();
+
+
+		// Afficher le chiffre "3" dans la zone
+		Main.jeu.getGUI().afficher("Trouvez le chiffre caché. Regardez attentivement la zone pendant 15 secondes...\n");
+
+		// Démarrer un Timer pour effectuer une action après 10 secondes
+		Timer timer = new Timer(15000, e -> {
+			// Effacer la zone après 10 secondes
+			Main.jeu.getGUI().effacerImage();
+			Main.jeu.getGUI().activerSaisieUtilisateur();
+			// Demander au joueur de taper le chiffre
+			String reponse = lireReponseGUI1();
+
+			// Vérifier si le chiffre saisi par le joueur est correct
+			if (reponse.equals("3")) {
+				Main.jeu.afficher("Félicitations ! Vous avez trouvé le chiffre correct pour tuer le dragon.");
+				dragontuée = true;
+
+				// Autres actions pour tuer le dragon...
+			} else {
+				Main.jeu.afficher("Désolé, le chiffre que vous avez saisi est incorrect. Le dragon vous attaque ! Vous avez perdu");
+				Main.jeu.terminer();
+				// Autres actions en cas de réponse incorrecte...
+			}
+		});
+		timer.setRepeats(false); // Ne répéter qu'une seule fois
+		timer.start();
+	}
+
+
 }
 

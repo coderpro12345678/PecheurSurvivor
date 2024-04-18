@@ -29,9 +29,8 @@ public class Foret extends Zone {
 
 	@Override
 	public List<String> getCommandesSpecifiques() {
-		commandes.add("NORD");
-		commandes.add("EST");
-		commandes.add("OUEST");
+		commandes.add("NORD-N");
+
 		
 		return commandes;
 	}

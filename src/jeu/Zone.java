@@ -11,6 +11,8 @@ public abstract class Zone {
     private int situationActuelle;
     private List<Objet> objets;
     protected List<String> commandes;
+
+    private List<String> autrescommandes;
     
     
 
@@ -20,7 +22,8 @@ public abstract class Zone {
         this.description = description;
         images = new ArrayList<>();
         sorties = new ArrayList<>();
-        situationActuelle = 0; 
+        situationActuelle = 0;
+        autrescommandes = new ArrayList<>();
  
         objets = new ArrayList<>();
         ;
@@ -60,7 +63,11 @@ public abstract class Zone {
     }
     public abstract void executerCommandeSpecifique(String commande);
     
+    public List<String> getAutrescommandes(){
+        autrescommandes.add("INVENTAIRE-I");
 
+        return autrescommandes;
+    }
 
 
    public String toString() {

@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0862e136-0aac-4677-ab41-9398b371184f" name="Changes" comment="First commit">
+    <list default="true" id="0862e136-0aac-4677-ab41-9398b371184f" name="Changes" comment="Objets à afficher">
+      <change afterPath="$PROJECT_DIR$/src/imagesJeu/fondnoir.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/imagesJeu/labyrinthe2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jeu/Plage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jeu/Plage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagesJeu/labyrinthe.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/imagesJeu/labyrinthe.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imagesJeu/monstre.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/imagesJeu/monstre.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jeu/Foret.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jeu/Foret.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jeu/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jeu/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jeu/Jeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jeu/Jeu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jeu/Labyrinthe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jeu/Labyrinthe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jeu/Village.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jeu/Village.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jeu/Zone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jeu/Zone.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,12 +46,16 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/telechargement/PecheurSurvivor/PecheurSurvivor/src/imagesJeu&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\telechargement\PecheurSurvivor\PecheurSurvivor\src\imagesJeu" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\telechargement\PecheurSurvivor\PecheurSurvivor\src" />
     </key>
@@ -91,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1711031584771</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Objets à afficher">
+      <created>1711034759160</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1711034759160</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,6 +126,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
+    <MESSAGE value="Objets à afficher" />
+    <option name="LAST_COMMIT_MESSAGE" value="Objets à afficher" />
   </component>
 </project>

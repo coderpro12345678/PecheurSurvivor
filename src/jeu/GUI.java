@@ -112,4 +112,18 @@ public class GUI implements ActionListener
         // Par exemple, si vous avez un JTextArea nommé consoleTextArea :
         texte.setText("");
     }
+    public void effacerImage() {
+        URL imageURL = this.getClass().getClassLoader().getResource("imagesJeu/fondnoir.jpg");
+        if (imageURL != null) {
+            image.setIcon(new ImageIcon(imageURL));
+        } else {
+            System.out.println("L'image de fond noir n'a pas été trouvée.");
+        }
+    }
+    public void stopperSaisieUtilisateur() {
+        entree.setEditable(false); // Désactive la saisie utilisateur
+    }
+    public void activerSaisieUtilisateur() {
+        entree.setEditable(true); // Désactive la saisie utilisateur
+    }
 }

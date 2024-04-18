@@ -59,12 +59,13 @@ public class Jeu {
         Plage plage = new Plage("Plage");
         Foret foret = new Foret("Foret");
         Village village = new Village("Village");
+        Zone labyrinthe= new Labyrinthe("Labyrinthe");
         /*
         Zone maison = new Zone("Maison");
         
         Zone grotte = new Zone("Grotte");
         Zone maisonisolee = new Zone("Maisonisolee");
-        Zone labyrinthe= new Zone("Labyrinthe");
+
         Zone monstre = new Zone("Monstre");
         Zone temple = new Zone("Temple");
         Zone sorcierelieu= new Zone("Sorciere");*/
@@ -76,12 +77,14 @@ public class Jeu {
         foret.ajouterImage("foret.png");
         village.ajouterImage("village.png");
         village.ajouterImage("village2.png");
+        labyrinthe.ajouterImage("labyrinthe.png");
+        labyrinthe.ajouterImage("labyrinthe2.png");
         /*
         maison.ajouterImage("maison.png");
       
         grotte.ajouterImage("grotte.png");
         maisonisolee.ajouterImage("maisonisolee.png");
-        labyrinthe.ajouterImage("labyrinthe.png");
+
         monstre.ajouterImage("monstre.png");
         temple.ajouterImage("temple.png");
         sorcierelieu.ajouterImage("sorcierelieu.png");*/
@@ -99,12 +102,13 @@ public class Jeu {
         zonesDisponibles.add(plage);
         zonesDisponibles.add(foret);
         zonesDisponibles.add(village);
+        zonesDisponibles.add(labyrinthe);
         /*
         zonesDisponibles.add(maison);
        
         zonesDisponibles.add(grotte);
         zonesDisponibles.add(maisonisolee);
-        zonesDisponibles.add(labyrinthe);
+
         zonesDisponibles.add(monstre); 
         zonesDisponibles.add(temple);
         zonesDisponibles.add(sorcierelieu);*/
@@ -192,6 +196,10 @@ public class Jeu {
     	List<String> deplacements = zoneCourante.getCommandesDeplacements();
         gui.afficher("Commandes Ddeplacements : " + String.join(", ", deplacements));
     }
+    private void afficherAutresCommandes() {
+        List<String> deplacements = zoneCourante.getAutrescommandes();
+        gui.afficher("Autres commandes : " + String.join(", ", deplacements));
+    }
 
           
 
@@ -252,6 +260,7 @@ public class Jeu {
     	        zoneCourante.executerCommandeSpecifique(commandeLue.toUpperCase());
     	        if(zoneCourante.getCommandesRestantes().size()==0) {
     	        	afficherCommandesDéplacements();
+                    afficherAutresCommandes();
     	        	}
     	        else {
     	        	 afficherCommandesRestantes();
@@ -264,10 +273,23 @@ public class Jeu {
     	    }*/
     	    switch (commandeLue) {
     	    	case "VERS LA FORET":
-    	    	case "NORD":
-    	    	case "EST":
-    	    		choisirNouvelleZone();
-    	    		break;
+                case "NORD":
+                case "N":
+                case "EST":
+                case "E":
+                case "SUD":
+                case "S":
+                case "OUEST":
+                case "O":
+                    choisirNouvelleZone();
+                    break;
+                case "INVENTAIRE":
+                case "I":
+                    afficherInventaire();
+                    break;
+                /*case "AIDE":
+                    afficherAide();
+                    break;*/
     	    }
     	    
     	    
@@ -286,9 +308,7 @@ public class Jeu {
             choisirNouvelleZone();
             break;
         case "?":
-        case "AIDE":
-                afficherAide();
-                break;
+
         case "R":
         case "RAMASSER":
                 ramasserObjet();
@@ -316,8 +336,12 @@ public class Jeu {
         gui.afficher();
     }
 
-    private void terminer() {
+    void terminer() {
         gui.afficher("Au revoir...");
         gui.enable(false);
+    }
+    void terminerJeu() {
+        // Arrête l'exécution du jeu
+        System.exit(0);
     }
 }
