@@ -35,9 +35,8 @@ public class Village extends Zone {
 	public List<String> getCommandesSpecifiques() {
 		commandes.add("PARLER AU VILLAGEOIS");
 		commandes.add("PARLER AU CHEF DU VILLAGE");
-		sorties.add("NORD-N");
 		sorties.add("OUEST-O");
-		sorties.add("EST-E");
+
 		return commandes;
 	}
 
@@ -64,7 +63,9 @@ public class Village extends Zone {
         	 }}
 			else{
 				Main.jeu.getGUI().afficheImage("village2.png");
-				Main.jeu.afficher("Merci pêcheur!");
+				Main.jeu.afficher("Merci pêcheur! En retour si je me souviens de ce que tu m'as dit tu t'es également \n" +
+						"échoué avec ton ane et que tu le cherches aussi. Je l'ai vu se diriger du coté est de l'île vers la plage. \n" +
+						"Il se peut qu'il t'attende là-bas");
 				commandes.remove("PARLER AU CHEF DU VILLAGE");
 			}
 

@@ -9,7 +9,7 @@ public class Joueur {
 
     public Joueur(Zone zoneInitiale) {
         this.zoneActuelle = zoneInitiale;
-        this.objets = new ArrayList<>();
+        this.objets = new ArrayList<>(6);
     }
 
     public List<Objet> getObjets() {

@@ -5,9 +5,12 @@ import java.util.List;
 public class Plage extends Zone {
     
 	private Objet couteau;
+    private Objet Sac;
     public Plage(String description) {
         super(description);
         this.couteau = new Objet("Couteau");
+        this.Sac = new Objet("Sac");
+        super.getObjets().add(Sac);
         super.getObjets().add(couteau);
         
         commandes = new ArrayList<String>();
@@ -23,7 +26,7 @@ public class Plage extends Zone {
         return commandes;
     }
     public List<String> ajoutSorties(){
-    	sorties.add("VERS LA FORET");
+    	sorties.add("VERS LA FORET-V");
     	return sorties;
     }
     
@@ -34,7 +37,7 @@ public class Plage extends Zone {
                 // Afficher l'image et le message à la console
                 Main.jeu.getGUI().afficheImage("plageSac.png");
                 Main.jeu.afficher("Vous êtes devant ce qui reste de votre bateau. \n"
-                		+ "Vous ramassé ce qui en reste à savoir un sac qui vous servira d'inventaire.");
+                		+ "Vous ramassé ce qui en reste à savoir un sac qui vous servira d'inventaire. Nombre d'emplacements dans le sac :6");
                
                 
                 commandes.add("ROCHER");

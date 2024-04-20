@@ -58,13 +58,15 @@ public class Jeu {
     	
         Plage plage = new Plage("Plage");
         Foret foret = new Foret("Foret");
-        Village village = new Village("Village");
+        //Village village = new Village("Village");
         Zone labyrinthe= new Labyrinthe("Labyrinthe");
+        Zone maisonisolee = new MaisonIsolee("Maisonisolee");
+
         /*
         Zone maison = new Zone("Maison");
         
         Zone grotte = new Zone("Grotte");
-        Zone maisonisolee = new Zone("Maisonisolee");
+
 
         Zone monstre = new Zone("Monstre");
         Zone temple = new Zone("Temple");
@@ -75,15 +77,17 @@ public class Jeu {
         plage.ajouterImage("plage.png");
         plage.ajouterImage("plage2.png");
         foret.ajouterImage("foret.png");
-        village.ajouterImage("village.png");
-        village.ajouterImage("village2.png");
+        //village.ajouterImage("village.png");
+        //village.ajouterImage("village2.png");
         labyrinthe.ajouterImage("labyrinthe.png");
         labyrinthe.ajouterImage("labyrinthe2.png");
+        maisonisolee.ajouterImage("maisonisolee.png");
+        maisonisolee.ajouterImage("MAISONISOLE2.png");
         /*
         maison.ajouterImage("maison.png");
       
         grotte.ajouterImage("grotte.png");
-        maisonisolee.ajouterImage("maisonisolee.png");
+
 
         monstre.ajouterImage("monstre.png");
         temple.ajouterImage("temple.png");
@@ -101,13 +105,14 @@ public class Jeu {
 
         zonesDisponibles.add(plage);
         zonesDisponibles.add(foret);
-        zonesDisponibles.add(village);
+        //zonesDisponibles.add(village);
         zonesDisponibles.add(labyrinthe);
+        zonesDisponibles.add(maisonisolee);
         /*
         zonesDisponibles.add(maison);
        
         zonesDisponibles.add(grotte);
-        zonesDisponibles.add(maisonisolee);
+
 
         zonesDisponibles.add(monstre); 
         zonesDisponibles.add(temple);
@@ -194,7 +199,7 @@ public class Jeu {
     }
     private void afficherCommandesDéplacements() {
     	List<String> deplacements = zoneCourante.getCommandesDeplacements();
-        gui.afficher("Commandes Ddeplacements : " + String.join(", ", deplacements));
+        gui.afficher("Commandes deplacements : " + String.join(", ", deplacements));
     }
     private void afficherAutresCommandes() {
         List<String> deplacements = zoneCourante.getAutrescommandes();
@@ -273,6 +278,7 @@ public class Jeu {
     	    }*/
     	    switch (commandeLue) {
     	    	case "VERS LA FORET":
+                case "V":
                 case "NORD":
                 case "N":
                 case "EST":
@@ -286,6 +292,8 @@ public class Jeu {
                 case "INVENTAIRE":
                 case "I":
                     afficherInventaire();
+                    afficherCommandesDéplacements();
+                    afficherAutresCommandes();
                     break;
                 /*case "AIDE":
                     afficherAide();
