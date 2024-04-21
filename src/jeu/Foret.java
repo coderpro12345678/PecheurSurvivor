@@ -8,6 +8,7 @@ public class Foret extends Zone {
     public Foret(String description) {
         super(description);
         commandes = new ArrayList<String>();
+        sorties.add("NORD-N");
         
        
     }
@@ -29,7 +30,7 @@ public class Foret extends Zone {
 
 	@Override
 	public List<String> getCommandesSpecifiques() {
-		commandes.add("NORD-N");
+
 
 		
 		return commandes;

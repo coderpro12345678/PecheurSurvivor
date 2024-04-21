@@ -14,15 +14,16 @@ public class Plage extends Zone {
         super.getObjets().add(couteau);
         
         commandes = new ArrayList<String>();
+        commandes.add("EPAVE");
+
+        sorties.add("VERS LA FORET");
         
         
     }
 
     public List<String> getCommandesSpecifiques() {
         
-        commandes.add("EPAVE");
-        
-        sorties.add("VERS LA FORET");
+
         return commandes;
     }
     public List<String> ajoutSorties(){
@@ -45,7 +46,7 @@ public class Plage extends Zone {
                 break;
             case "ROCHER":
                 Main.jeu.getGUI().afficheImage("plageCouteau.png");
-                Main.jeu.afficher("Vous avez trouver un rocher");
+                Main.jeu.afficher("Vous regardez sous le rocher et vous apercevez un objet.");
                 Main.jeu.getJoueur().ramasserObjet(couteau);
                 commandes.remove("ROCHER");
                 break;

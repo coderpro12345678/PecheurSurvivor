@@ -61,6 +61,7 @@ public class Jeu {
         //Village village = new Village("Village");
         Zone labyrinthe= new Labyrinthe("Labyrinthe");
         Zone maisonisolee = new MaisonIsolee("Maisonisolee");
+        Zone grotte = new Grotte("Grotte");
 
         /*
         Zone maison = new Zone("Maison");
@@ -142,13 +143,12 @@ public class Jeu {
             System.out.println(zonesDisponibles.size());
         	System.out.println(zonesVisitees);
         } else if (zonesDisponibles.isEmpty()) {
-        	
+
             zoneCourante = n;
             zoneCourante.getDescription();
+        }
 
-            
-            
-        } else {
+        else {
         	
             Random random = new Random();
             int index = random.nextInt(zonesDisponibles.size());
@@ -220,7 +220,13 @@ public class Jeu {
     	
         gui.afficher(zone.getDescription());
         gui.afficher();
-        afficherCommandesDisponibles();
+        if(zoneCourante.getCommandes().isEmpty()){
+            afficherCommandesDéplacements();
+            afficherAutresCommandes();
+        }
+        else {
+            afficherCommandesDisponibles();
+        }
         gui.afficher(zone.getObjetsDisponibles());
         gui.afficher();
         gui.afficheImageZoneActuelle();
@@ -276,30 +282,32 @@ public class Jeu {
     	    	zoneCourante.executerCommandeSpecifique(commandeLue);
     	    	
     	    }*/
-    	    switch (commandeLue) {
-    	    	case "VERS LA FORET":
-                case "V":
-                case "NORD":
-                case "N":
-                case "EST":
-                case "E":
-                case "SUD":
-                case "S":
-                case "OUEST":
-                case "O":
-                    choisirNouvelleZone();
-                    break;
-                case "INVENTAIRE":
-                case "I":
-                    afficherInventaire();
-                    afficherCommandesDéplacements();
-                    afficherAutresCommandes();
-                    break;
+            if(zoneCourante.getCommandesRestantes().isEmpty()) {
+
+                switch (commandeLue.toUpperCase()) {
+                    case "VERS LA FORET":
+                    case "V":
+                    case "NORD":
+                    case "N":
+                    case "EST":
+                    case "E":
+                    case "SUD":
+                    case "S":
+                    case "OUEST":
+                    case "O":
+                        choisirNouvelleZone();
+                        break;
+                    case "INVENTAIRE":
+                    case "I":
+                        afficherInventaire();
+                        afficherCommandesDéplacements();
+                        afficherAutresCommandes();
+                        break;
                 /*case "AIDE":
                     afficherAide();
                     break;*/
-    	    }
-    	    
+                }
+            }
     	    
     	    System.out.println(zoneCourante.getCommandesDeplacements());
     	    System.out.println(zoneCourante.getCommandesRestantes());

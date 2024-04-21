@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0862e136-0aac-4677-ab41-9398b371184f" name="Changes" comment="Zone village presque terminé (manque de changer le retour au village depuis le dragon ) + zone Labyrinthe bien avancé">
-      <change afterPath="$PROJECT_DIR$/src/imagesJeu/MAISONISOLE2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/imagesJeu/MAISONISOLE3.png" afterDir="false" />
+    <list default="true" id="0862e136-0aac-4677-ab41-9398b371184f" name="Changes" comment="labyrithe termine, maisonisolee entamé et corrections de certaine classes">
+      <change afterPath="$PROJECT_DIR$/src/imagesJeu/MAISONISOLE4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/imagesJeu/MAISONISOLE5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/imagesJeu/MAISONISOLE6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/imagesJeu/MAISONISOLE7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/imagesJeu/MAISONISOLE8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/imagesJeu/MAISONISOLE9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jeu/Grotte.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jeu/Foret.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jeu/Foret.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jeu/Jeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jeu/Jeu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jeu/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jeu/Joueur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jeu/Labyrinthe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jeu/Labyrinthe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jeu/MaisonIsolee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jeu/MaisonIsolee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jeu/Plage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jeu/Plage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jeu/Village.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jeu/Village.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jeu/Zone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jeu/Zone.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +24,13 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -115,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713463781761</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="labyrithe termine, maisonisolee entamé et corrections de certaine classes">
+      <created>1713633234151</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713633234151</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,6 +152,7 @@
     <MESSAGE value="First commit" />
     <MESSAGE value="Objets à afficher" />
     <MESSAGE value="Zone village presque terminé (manque de changer le retour au village depuis le dragon ) + zone Labyrinthe bien avancé" />
-    <option name="LAST_COMMIT_MESSAGE" value="Zone village presque terminé (manque de changer le retour au village depuis le dragon ) + zone Labyrinthe bien avancé" />
+    <MESSAGE value="labyrithe termine, maisonisolee entamé et corrections de certaine classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="labyrithe termine, maisonisolee entamé et corrections de certaine classes" />
   </component>
 </project>

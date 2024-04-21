@@ -20,13 +20,14 @@ public class Labyrinthe extends Zone {
         this.coffre = new Objet("coffre");
         this.cordes = new Objet("cordes");
         super.getObjets().add(coffre);
+        sorties.add("EST-E");
+        commandes.add("Aucune commandes disponibles");
        
     }
 
     @Override
     public List<String> getCommandesSpecifiques() {
-        sorties.add("EST-E");
-        commandes.add("Aucune commandes disponibles");
+
         return commandes;
     }
 

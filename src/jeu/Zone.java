@@ -48,6 +48,9 @@ public abstract class Zone {
        GUI.class
        
     }*/
+    public List<String> getCommandes(){
+        return this.commandes;
+    }
     public abstract List<String> getCommandesSpecifiques();
     public List<String> getCommandesDisponibles() {
         List<String> commandes = new ArrayList<>();
@@ -64,8 +67,9 @@ public abstract class Zone {
     public abstract void executerCommandeSpecifique(String commande);
     
     public List<String> getAutrescommandes(){
-        autrescommandes.add("INVENTAIRE-I");
-
+        if(!autrescommandes.contains("INVENTAIRE-I")) {
+             autrescommandes.add("INVENTAIRE-I");
+        }
         return autrescommandes;
     }
 
